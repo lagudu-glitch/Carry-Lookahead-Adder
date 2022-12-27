@@ -1,11 +1,11 @@
 module tb ();
-    logic [3:0] tb_X;
-    logic [3:0] tb_Y;
-    logic [3:0] tb_S;
+    logic [15:0] tb_X;
+    logic [15:0] tb_Y;
+    logic [15:0] tb_S;
     logic tb_CO;
 
     // instance of DUT
-    cla_4b test (.CI(1'b0), .A(tb_X), .B(tb_Y), .CO(tb_CO), .S(tb_S));
+    cla_16b test (.CI(1'b0), .A(tb_X), .B(tb_Y), .CO(tb_CO), .S(tb_S));
 
     initial begin
         
