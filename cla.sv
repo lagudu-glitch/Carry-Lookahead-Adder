@@ -68,10 +68,14 @@ module cla_16b (
 );
 	logic [2:0] C;
 	logic [3:0] P, G;
-	logic [15:0] p, g;
+	logic [15:0] p, g, buff, nB;
+
+	// Invert
+	assign buff = {16{CI}};
+	assign nB = B ^ buff;
 
 	// Compute the p's and g's
-	com_pg pg (.A(A), .B(B), .p(p), .g(g));
+	com_pg pg (.A(A), .B(nB), .p(p), .g(g));
 
 	// Compute P's
 	assign P[0] = &p[3:0];
