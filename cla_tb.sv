@@ -65,6 +65,26 @@ module tb ();
         tb_CI = 0;
 
         #1
+        tb_X = -20;
+        tb_Y = -20;
+        tb_CI = 0;
+
+        #1
+        tb_X = -20;
+        tb_Y = -20;
+        tb_CI = 1;
+
+        #1
+        tb_X = -3000;
+        tb_Y = -200;
+        tb_CI = 0;
+
+        #1
+        tb_X = -3000;
+        tb_Y = -200;
+        tb_CI = 1;
+
+        #1
         $display("TEST COMPLETE");
         $finish();
     end
@@ -72,7 +92,7 @@ module tb ();
     // To dump signals to waveform
     initial begin
         $dumpfile("dump.vcd");
-        $dumpvars; 
+        $dumpvars(0, tb); 
     end
 
 endmodule
